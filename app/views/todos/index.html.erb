@@ -1,0 +1,9 @@
+<% content_for :title, "TODO" %>
+
+<h1>TODO</h1>
+
+<%= render "form", todo: @todo %>
+
+<ul id="todos">
+  <%= render @todos %>
+</ul>

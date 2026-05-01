@@ -8,6 +8,12 @@ gem "propshaft"
 gem "pg", "~> 1.5"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
+# Hotwire
+gem "importmap-rails"
+gem "turbo-rails"
+gem "stimulus-rails"
+# Authentication
+gem "devise"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

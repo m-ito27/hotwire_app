@@ -1,0 +1,14 @@
+<li id="<%= dom_id(todo) %>" class="todo-item <%= "completed" if todo.completed? %>">
+  <%= form_with model: todo, class: "todo-toggle" do |f| %>
+    <%= f.hidden_field :completed, value: !todo.completed %>
+    <%= f.button type: :submit, class: "toggle" do %>
+      <%= todo.completed? ? "☑" : "☐" %>
+    <% end %>
+  <% end %>
+
+  <span class="todo-title"><%= todo.title %></span>
+
+  <%= button_to "削除", todo_path(todo), method: :delete,
+        form: { data: { turbo_confirm: "削除しますか？" } },
+        class: "delete" %>
+</li>

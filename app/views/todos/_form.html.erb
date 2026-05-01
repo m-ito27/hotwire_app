@@ -1,0 +1,11 @@
+<%= form_with model: todo, id: "new_todo_form" do |f| %>
+  <% if todo.errors.any? %>
+    <ul class="errors">
+      <% todo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.text_field :title, placeholder: "やることを入力", autofocus: true %>
+  <%= f.submit "追加" %>
+<% end %>
