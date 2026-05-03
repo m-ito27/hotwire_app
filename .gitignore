@@ -1,0 +1,5 @@
+log/development.log
+log/test.log
+log/production.log
+tmp/pids/server.pid
+tmp/restart.txt

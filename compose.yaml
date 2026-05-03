@@ -16,6 +16,11 @@ services:
     build: .
     ports:
       - "3000:3000"
+    environment:
+      BUNDLE_PATH: /gems
+      BUNDLE_APP_CONFIG: /gems
+    volumes:
+      - .:/app:delegated
     depends_on:
       db:
         condition: service_healthy
