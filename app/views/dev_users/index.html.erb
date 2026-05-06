@@ -1,0 +1,21 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-md mx-auto">
+    <h1 class="text-3xl font-bold mb-6">開発用: ユーザー選択</h1>
+
+    <% if @users.any? %>
+      <div class="space-y-2">
+        <% @users.each do |user| %>
+          <div class="border rounded-lg p-4 hover:bg-gray-100 transition">
+            <%= button_to user.email, dev_user_login_path(user), method: :post, class: "w-full text-left font-medium text-blue-600 hover:text-blue-800" %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-gray-600">ユーザーが見つかりません</p>
+    <% end %>
+
+    <div class="mt-6">
+      <%= link_to "ログイン画面へ", new_user_session_path, class: "text-gray-600 hover:text-gray-800" %>
+    </div>
+  </div>
+</div>
